@@ -1,0 +1,564 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Introducing Lollipop, a sweet new take on Android.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>TerraBrasilis - TERRABRASILIS</title>
+
+    <!-- Page styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/material.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut_icon" href="http://terrabrasilis.info/theme/images/logo_inpe.png">    
+    <style>
+      #view-source {
+        position: fixed;
+        display: block;
+        right: 0;
+        bottom: 0;
+        margin-right: 40px;
+        margin-bottom: 40px;
+        z-index: 900;
+      }
+      .logo-font {
+          color: #000000 !important;
+      }
+      .align-text-customized {
+        text-align: justify !important;
+      }
+      .mdl-card-customized {
+        width: 515px !important;
+      }   
+      .mdl-data-table.table-center {
+        justify-content: center;
+      }  
+    </style>
+  </head>
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+      <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
+        <div class="mdl-layout__header-row">
+          <span class="android-title mdl-layout-title">
+            <a href="http://www.terrabrasilis.info" tiltle="Acesso ao Terrabrasilis!">
+              <img class="android-logo-image" src="images/terrabrasilis_icon.png">
+            </a>
+          </span>
+          <!-- Add spacer, to align navigation to the right in desktop -->
+          <div class="android-header-spacer mdl-layout-spacer"></div>
+          <div class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+          </div>
+          <!-- Navigation -->
+          <div class="android-navigation-container">
+            <nav class="android-navigation mdl-navigation">
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="http://www.inpe.br" target="_blank" title="Acesso ao website do Instituto Nacional de Pesquisas Espaciais">INPE</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="http://www.obt.inpe.br" target="_blank" title="Acesso ao website do OBT">OBT</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="http://www.dpi.inpe.br" target="_blank" title="Acesso ao website do DPI">DPI</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#perfis" title="Veja os perfis de projetos que utilizam o Terrabrasilis">PERFIS</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#sdi" title="Spatial Data Infrastructure">SDI</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#desenvolvimento" title="Documentação, Repositório, Source Code e outros">DESENVOLVIMENTO</a>
+            </nav>
+          </div>
+          <span class="android-mobile-title mdl-layout-title">
+            <img class="android-logo-image" src="images/terrabrasilis_icon.png">
+          </span>
+          <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
+            <i class="material-icons">more_vert</i>
+          </button>
+          <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+            <li class="mdl-menu__item">
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#perfis" title="Veja os perfis de projetos que utilizam o Terrabrasilis">Perfis</a>
+            </li>
+            <li class="mdl-menu__item">
+                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#time" title="Nosso time">Time</a>
+            </li>            
+          </ul>
+        </div>
+      </div>
+
+      <div class="android-drawer mdl-layout__drawer">
+        <span class="mdl-layout-title">
+          <img class="android-logo-image" src="images/terrabrasilis_icon.png">
+        </span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="http://www.inpe.br" target="_blank" title="Acesso ao website do Instituto Nacional de Pesquisas Espaciais">INPE</a>
+          <a class="mdl-navigation__link" href="http://www.obt.inpe.br" target="_blank" title="Acesso ao website do OBT">OBT</a>
+          <a class="mdl-navigation__link" href="http://www.dpi.inpe.br" target="_blank" title="Acesso ao website do DPI">DPI</a>
+          <a class="mdl-navigation__link" href="#perfis" title="Veja os perfis de projetos que utilizam o Terrabrasilis">Perfis</a>
+          <div class="android-drawer-separator"></div>
+          <span class="mdl-navigation__link" href="">Diversos</span>
+          <a class="mdl-navigation__link" href="#sdi" title="Spatial Data Infrastructure">SDI</a>
+          <a class="mdl-navigation__link" href="#desenvolvimento" title="Documentação, Repositório, Source Code e outros">Desenvolvimento</a>
+          <a class="mdl-navigation__link" href="#time" title="Nosso time">Time</a>       
+        </nav>
+      </div>
+
+      <div class="android-content mdl-layout__content">
+        <a name="top"></a>
+        <div class="android-be-together-section mdl-typography--text-center">
+          <div class="logo-font android-slogan"><strong>TerraBrasilis</strong></div>
+          <div class="logo-font android-sub-slogan"></div>
+          <div class="logo-font android-create-character">
+          </div>
+        </div>
+        
+        <!-- Perfis -->
+        <a name="perfis"></a>
+        <div class="android-more-section">
+          <div class="android-section-title mdl-typography--display-1-color-contrast">Terrabrasilis - Perfis</div>
+          <div class="android-card-container mdl-grid">
+
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+                <div class="mdl-card__media">
+                  <img src="images/boeing-profile.png">
+                </div>
+                <div class="mdl-card__title">
+                    <h4 class="mdl-card__title-text"></h4>
+                </div>
+                <div class="mdl-card__supporting-text align-text-customized">
+                  <span class="mdl-typography--font-light mdl-typography--subhead">Publicação dos dados gerados no âmbito do projeto <strong>Geotecnologias para 
+                    o Gerenciamento de Cultivos Energéticos Eficientes</strong>. Este projeto é um esforço colaborativo entre INPE e Boeing. 
+                    <br/>
+                    Fonte: <a class="android-link" href="http://www.inpe.br/noticias/noticia.php?Cod_Noticia=3169">http://www.inpe.br/noticias</a></span>
+                </div>
+                <div class="mdl-card__actions">
+                    <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="http://terrabrasilis.info/composer/BOEING">
+                      Acesso
+                      <i class="material-icons">chevron_right</i>
+                    </a>
+                </div>
+            </div>   
+  
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+                <div class="mdl-card__media">
+                  <img src="images/redd-pac-profile.png">
+                </div>
+                <div class="mdl-card__title">
+                    <h4 class="mdl-card__title-text"></h4>
+                </div>
+                <div class="mdl-card__supporting-text align-text-customized">
+                  <span class="mdl-typography--font-light mdl-typography--subhead">Plataforma de acesso aos dados atualizados do projeto REDD-PAC, 
+                    que visa o desenvolvimento de conhecimento técnico e capacidade na concepção eficiente, eficaz e ambientalmente 
+                    relevante de estratégias de <a class="android-link" href="http://ipam.org.br/entenda/o-que-e-redd-e-redd/">REDD+</a>.  
+                    <br/>
+                    Fonte: <a class="android-link" href="http://www.inpe.br/noticias/noticia.php?Cod_Noticia=2915">http://www.inpe.br/noticias</a></span>
+                </div>
+                <div class="mdl-card__actions">
+                    <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="http://terrabrasilis.info/composer/REDD-PAC">
+                      Acesso
+                      <i class="material-icons">chevron_right</i>
+                    </a>
+                </div>
+            </div>
+  
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+                <div class="mdl-card__media">
+                  <img src="images/pauliceia-profile.png">
+                </div>
+                <div class="mdl-card__title">
+                    <h4 class="mdl-card__title-text"></h4>
+                </div>
+                <div class="mdl-card__supporting-text align-text-customized">
+                  <span class="mdl-typography--font-light mdl-typography--subhead">Disponibilização de dados produzidos no projeto Pauliceia 2.0 cujo
+                      objetivo é desenvolver e disponibilizar na internet uma base cartográfica digital histórica da cidade de São Paulo (1870-1940), 
+                      associada a uma interface que permita a interatividade . 
+                    <br/>
+                    Fonte: <a class="android-link" href="http://agencia.fapesp.br/pauliceia_20_mapeamento_colaborativo_da_historia_de_sao_paulo_18701940/25017/">agencia.fapesp.br</a></span>
+                </div>
+                <div class="mdl-card__actions">
+                    <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="http://terrabrasilis.info/composer/PAULICEIA">
+                      Acesso
+                      <i class="material-icons">chevron_right</i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+              <div class="mdl-card__media">
+                <img src="images/deter-b-profile.png">
+              </div>
+              <div class="mdl-card__title">
+                 <h4 class="mdl-card__title-text"></h4>
+              </div>
+              <div class="mdl-card__supporting-text  align-text-customized">
+                <span class="mdl-typography--font-light mdl-typography--subhead">Projeto de detecção do desmatamento da amazônia legal em tempo 
+                  quase real. Este perfil de acesso inclui ferramentas de consulta aos dados gerados diariamente pela equipe de 
+                  análise do <a class="android-link" href="http://www.inpe.br/cra/">INPE/CRA.</a><br/>
+                  DETER-B de INPE está licenciado com uma Licença Creative Commons - 
+                  Atribuição-CompartilhaIgual 4.0 Internacional.  Baseado no trabalho disponível em <a class="android-link" href="http://www.inpe.br/cra/">http://www.inpe.br/cra/</a> 
+                  Podem estar disponíveis autorizações adicionais às concedidas no âmbito desta licença em 
+                  <a class="android-link" href="http://terrabrasilis.info/licenses/DETER-B">
+                  licenses DETER-B</a></span>
+              </div>
+              <div class="mdl-card__actions">
+                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="http://terrabrasilis.info/composer/DETER-B">
+                   Acesso
+                   <i class="material-icons">chevron_right</i>
+                 </a>
+              </div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+              <div class="mdl-card__media">
+                <img src="images/prodes-profile.png">
+              </div>
+              <div class="mdl-card__title">
+                 <h4 class="mdl-card__title-text"></h4>
+              </div>
+              <div class="mdl-card__supporting-text  align-text-customized">
+                <span class="mdl-typography--font-light mdl-typography--subhead">O projeto PRODES realiza o monitoramento por satélites do desmatamento 
+                  por corte raso na Amazônia Legal e produz, desde 1988, as taxas anuais de desmatamento na região, que são usadas pelo 
+                  governo brasileiro para o estabelecimento de políticas públicas.</span>
+              </div>
+              <div class="mdl-card__actions">
+                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="http://terrabrasilis.info/composer/PRODES/">
+                   Acesso
+                   <i class="material-icons">chevron_right</i>
+                 </a>
+              </div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+              <div class="mdl-card__media">
+                <img src="images/e-sensing-profile.png">
+              </div>
+              <div class="mdl-card__title">
+                 <h4 class="mdl-card__title-text"></h4>
+              </div>
+              <div class="mdl-card__supporting-text align-text-customized">
+                <span class="mdl-typography--font-light mdl-typography--subhead">Oferece dados obtidos dos experimentos de classificação de uso e 
+                  cobertura da terra desenvolvidos no contexto do projeto E-Seinsing. O projeto parte de um desafio científico importante: 
+                  como podemos usar métodos de e-science para melhorar substancialmente a extração de informações sobre a mudança de uso e 
+                  cobertura do solo a partir de grandes conjuntos de dados de observação da Terra em uma forma aberta e reprodutível? Em resposta
+                   a este desafio, nosso projeto vai conceber construir e implantar um tipo completamente novo de plataforma de conhecimento para
+                    a organização, acesso, processamento e análise de grandes dados de observação da Terra. Vamos mostrar que esta plataforma de 
+                    conhecimento permite aos cientistas para produzir informação de forma inovadora. Como a nossa plataforma é totalmente baseada
+                     em software livre, vamos também mostrar que promove o compartilhamento de dados e reprodutibilidade dos resultados. (AU) 
+                     <br/>
+                     Fonte: <a class="android-link" href="http://www.bv.fapesp.br/pt/auxilios/89598/e-sensing-analise-de-grandes-volumes-de-dados-de-observacao-da-terra-para-informacao-de-mudancas-de/">www.bv.fapesp.br</a></span>
+              </div>
+              <div class="mdl-card__actions">
+                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="http://terrabrasilis.info/composer/E-SENSING/">
+                   Acesso
+                   <i class="material-icons">chevron_right</i>
+                 </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- SDI -->
+        <a name="sdi"></a>
+        <div class="android-customized-section">
+          <div class="android-customized-section-text">
+            <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">SDI - Spatial Data Infrastructure</div>
+            <p class="mdl-typography--font-light">
+                Informações para esclarecimentos e acessos ao repositório de dados geoespaciais utilizados nos sistemas baseados no Terrabrasilis.
+              <br>              
+            </p>
+            <br/>                      
+            <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp table-center">
+                <thead>
+                  <tr>                    
+                    <th class="mdl-data-table__cell--non-numeric">PROJETO</th>
+                    <th class="mdl-data-table__cell--non-numeric">TIPO DE SERVIÇOS</th>
+                    <th class="mdl-data-table__cell--non-numeric">ACESSO EM</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="mdl-data-table__cell--non-numeric">OBT</td>
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <a class="android-link" href="http://www.opengeospatial.org/standards/wms">WMS</a>,
+                        <a class="android-link" href="http://www.opengeospatial.org/standards/wfs">WFS</a>
+                    </td>
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <a class="android-link" href="http://terrabrasilis.info/geoserver/">http://terrabrasilis.info/geoserver/</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mdl-data-table__cell--non-numeric">REDD-PAC</td>
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <a class="android-link" href="http://www.opengeospatial.org/standards/wms">WMS</a>,
+                        <a class="android-link" href="http://www.opengeospatial.org/standards/wfs">WFS</a>
+                    </td>
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <a class="android-link" href="http://terrabrasilis.info/redd-pac/">http://terrabrasilis.info/redd-pac/</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mdl-data-table__cell--non-numeric">TerraAmazon</td>
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <a class="android-link" href="http://www.opengeospatial.org/standards/wms">WMS</a>,
+                        <a class="android-link" href="http://www.opengeospatial.org/standards/wfs">WFS</a>
+                    </td>
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <a class="android-link" href="http://terrabrasilis.info/terraamazon/">http://terrabrasilis.info/terraamazon/</a>
+                    </td>
+                    </tr>
+                  <tr>
+                      <td class="mdl-data-table__cell--non-numeric">E-SENSING</td>
+                      <td class="mdl-data-table__cell--non-numeric">
+                          <a class="android-link" href="http://www.opengeospatial.org/standards/wms">WMS</a>,
+                          <a class="android-link" href="http://www.opengeospatial.org/standards/wfs">WFS</a>
+                      </td>
+                      <td class="mdl-data-table__cell--non-numeric">
+                          <a class="android-link" href="http://terrabrasilis.info/esensing/">http://terrabrasilis.info/esensing/</a>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td class="mdl-data-table__cell--non-numeric">DETER-B</td>
+                      <td class="mdl-data-table__cell--non-numeric">
+                          <a class="android-link" href="http://www.opengeospatial.org/standards/wms">WMS</a>,
+                          <a class="android-link" href="http://www.opengeospatial.org/standards/wfs">WFS</a>
+                      </td>
+                      <td class="mdl-data-table__cell--non-numeric">
+                          <a class="android-link" href="http://terrabrasilis.info/deterb/">http://terrabrasilis.info/deterb/</a>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td class="mdl-data-table__cell--non-numeric">Boeing</td>
+                      <td class="mdl-data-table__cell--non-numeric">
+                          <a class="android-link" href="http://www.opengeospatial.org/standards/wms">WMS</a>,
+                          <a class="android-link" href="http://www.opengeospatial.org/standards/wfs">WFS</a>
+                      </td>
+                      <td class="mdl-data-table__cell--non-numeric">
+                          <a class="android-link" href="http://terrabrasilis.info/boeing/">http://terrabrasilis.info/boeing/</a>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td class="mdl-data-table__cell--non-numeric">Paulicéia</td>
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <a class="android-link" href="http://www.opengeospatial.org/standards/wms">WMS</a>,
+                        <a class="android-link" href="http://www.opengeospatial.org/standards/wfs">WFS</a>
+                    </td>
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <a class="android-link" href="http://terrabrasilis.info/pauliceia/">http://terrabrasilis.info/pauliceia/</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mdl-data-table__cell--non-numeric">Metadados</td>
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <a class="android-link" href="http://www.opengeospatial.org/standards/cat">CSW</a>
+                    </td>
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <a class="android-link" href="http://geometadata.dpi.inpe.br/cgi-bin/csw.py">http://geometadata.dpi.inpe.br/cgi-bin/csw.py</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mdl-data-table__cell--non-numeric">Web Time Series Server</td>
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <a class="android-link" href="http://www.esensing.org/docs/Queiroz_WTSS_SBSR2015.pdf">WTSS</a>
+                    </td>
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <a class="android-link" href="http://www.dpi.inpe.br/tws/wtss/list_coverages">http://www.dpi.inpe.br/tws/wtss/list_coverages</a>
+                    </td>
+                  </tr>                 
+                </tbody>
+              </table>
+          </div> 
+          <br/>  
+          <div class="android-customized-section-image"></div>             
+        </div>
+  
+        <!-- Desenvolvimento -->
+        <a name="desenvolvimento"></a>
+        <div class="android-customized-section">
+          <div class="android-customized-section-text">
+            <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Desenvolvimento - documentação, repositório, código fonte entre outros.</div>
+            <p class="mdl-typography--font-light align-text-customized">
+                Conheça detalhes do projeto TerraBrasilis em linguagem técnica incluindo repositório de código fonte, 
+                ferramentas de desenvolvimento e demais utensílios de trabalho.                
+              <br/><br/>
+              <strong>Fontes</strong>: Guardamos nosso código em um repositório GIT e controlamos tudo usando o Gitlab.<br/>
+              <strong>Distribuição</strong>: Download da aplicação em pacote publicável no formato WAR.<br/>
+              <strong>Compilação manual</strong>: Configuração básica e compilação.<br/>
+              <strong>Ambiente de desenvolvolvimento</strong>: A implementação usando o Eclipse.<br/>
+              <strong>Arquitetura do software</strong>: Quais os componentes de software utilizados e como eles se comunicam.<br/>
+              <br/>   
+            
+              <strong>Acessos</strong>:<br/>
+              <strong>Wiki</strong>: Acesse a página <a class="mdl-navigation__link" href="https://gitlab.dpi.inpe.br/terrabrasilis/terrabrasilis/wikis/home"><strong>wiki</strong></a> do projeto.<br/>
+              <strong>Fontes</strong>: Acesse o <a class="mdl-navigation__link" href="https://gitlab.dpi.inpe.br/terrabrasilis/terrabrasilis"><strong>repositório</strong></a> e faça um clone do projeto.<br/>
+              <strong>Distribuição</strong>: Obtenha um <a class="mdl-navigation__link" href="https://gitlab.dpi.inpe.br/terrabrasilis/terrabrasilis/tags"><strong>pacote</strong></a> compilado com uma configuração básica.<br/>
+              <!-- <div class="mdl-cell mdl-cell--5-col mdl-cell--5-col-tablet mdl-cell--5-col-phone mdl-card mdl-shadow--4dp mdl-card-customized">
+                <div class="mdl-card__title">
+                  <h2 class="mdl-card__title-text align-text-customized">Wiki</h2>
+                </div>
+                <div class="mdl-card__supporting-text align-text-customized">                
+                </div>
+                <div class="mdl-card__supporting-text align-text-customized align-text-customized">
+                    Acesse a página <a class="mdl-navigation__link" href="https://gitlab.dpi.inpe.br/terrabrasilis/terrabrasilis/wikis/home">Wiki</a> do projeto.
+                </div>
+              </div>  -->
+            </p>  
+          </div>
+        </div>
+        <b/>
+
+        <!-- Time -->
+        <a name="time"></a>
+        <div class="android-customized-section">
+          <div class="android-customized-section-text">
+            <div class="mdl-typography--font-light mdl-typography--display-1-color-contrast">Nosso time</div>                                        
+          </div>                     
+        </div>
+        <div class="android-more-section">
+          <div class="android-card-container mdl-grid">
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+              <div class="mdl-card__media">
+                <img src="images/perfil_lubia.jpg">
+              </div>
+              <div class="mdl-card__title">
+                  <h4 class="mdl-card__title-text">Lubia Vinhas</h4>
+              </div>              
+              <div class="mdl-card__supporting-text align-text-customized">
+                <span class="mdl-typography--font-light mdl-typography--subhead">
+                  <strong>Equipe de Coordenação</strong>  <br/><br/>
+                  Pesquisadora da Divisão de Processamento de 
+                  Imagens (DIDPI) do INPE.
+                  </span>
+              </div>                    
+            </div>            
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+              <div class="mdl-card__media">
+                <img src="images/perfil_karine.jpg">
+              </div>
+              <div class="mdl-card__title">
+                  <h4 class="mdl-card__title-text">Karine Reis Ferreira</h4>
+              </div>
+              <div class="mdl-card__supporting-text align-text-customized">
+                <span class="mdl-typography--font-light mdl-typography--subhead">
+                  <strong>Equipe de Coordenação</strong>  <br/><br/>
+                  Pesquisadora da Divisão de Processamento de 
+                  Imagens (DIDPI) do INPE.
+                  </span>
+              </div>                    
+            </div>              
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+              <div class="mdl-card__media">
+                <img src="images/perfil_maurano.jpg">
+              </div>
+              <div class="mdl-card__title">
+                  <h4 class="mdl-card__title-text">Luis Eduardo Pinheiro Maurano</h4>
+              </div>
+              <div class="mdl-card__supporting-text align-text-customized">
+                <span class="mdl-typography--font-light mdl-typography--subhead">
+                  <strong>Equipe de Coordenação</strong>  <br/><br/>
+                  Tecnologista Senior da Divisão de Processamento
+                   de Imagens (DIDPI) do INPE.                   
+                  </span>
+              </div>                    
+            </div>                         
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+              <div class="mdl-card__media">
+                <img src="images/perfil_andre.jpg">
+              </div>
+              <div class="mdl-card__title">
+                  <h4 class="mdl-card__title-text">André Carvalho</h4>
+              </div>
+              <div class="mdl-card__supporting-text align-text-customized">
+                <span class="mdl-typography--font-light mdl-typography--subhead">                  
+                  <strong>Equipe de TI</strong><br/><br/>
+                  Analista de Sistemas - Dev Pleno.                  
+                  </span>
+              </div>                    
+            </div>            
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+              <div class="mdl-card__media">
+                <img src="images/perfil_fabio.jpg">
+              </div>
+              <div class="mdl-card__title">
+                  <h4 class="mdl-card__title-text">Fábio da Conceição Pinheiro</h4>
+              </div>
+              <div class="mdl-card__supporting-text align-text-customized">
+                <span class="mdl-typography--font-light mdl-typography--subhead">
+                  <strong>Equipe de TI</strong><br/><br/>
+                  Administrador de Banco de Dados.
+                  </span>
+              </div>                    
+            </div>              
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+              <div class="mdl-card__media">
+                <img src="images/perfil_jether.jpg">
+              </div>
+              <div class="mdl-card__title">
+                  <h4 class="mdl-card__title-text">Jether Rodrigues do Nascimento</h4>
+              </div>
+              <div class="mdl-card__supporting-text align-text-customized">
+                <span class="mdl-typography--font-light mdl-typography--subhead">
+                  <strong>Equipe de TI</strong><br/><br/>
+                  Gerente de Desenvolvimento de Software Sênior.
+                  </span>
+              </div>                    
+            </div>
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+              <div class="mdl-card__media">
+                <img src="images/perfil_luiz.jpg">
+              </div>
+              <div class="mdl-card__title">
+                  <h4 class="mdl-card__title-text">Luiz Fernando F. G. de Assis</h4>
+              </div>
+              <div class="mdl-card__supporting-text align-text-customized">
+                <span class="mdl-typography--font-light mdl-typography--subhead">
+                  <strong>Equipe de TI</strong><br/><br/>
+                  Analista de Sistemas - Dev Pleno.
+                  </span>
+              </div>                    
+            </div>                
+          </div>
+        </div>
+        <b/>
+
+        <!-- Rodapé -->
+        <footer class="android-footer mdl-mega-footer">
+          <div class="mdl-mega-footer--top-section">            
+            <div class="mdl-mega-footer--right-section">
+              <a class="mdl-typography--font-light" href="#top">
+                Voltar ao topo
+                <i class="material-icons">expand_less</i>
+              </a>
+            </div>
+          </div>
+
+          <div class="mdl-mega-footer--middle-section">
+            <p class="mdl-typography--font-light">Copyright © TerraBrasilis 2017</p>
+            <p class="mdl-typography--font-light">As informações apresentadas na plataforma TerraBrasilis assim como os dados seguem políticas de uso e licenças específicas de cada projeto.</p>
+          </div>
+
+          <div class="mdl-mega-footer--bottom-section">
+            <a class="android-link android-link-menu mdl-typography--font-light" id="version-dropdown">
+              Políticas de uso e licença
+              <i class="material-icons">arrow_drop_up</i>
+            </a>
+            <ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="version-dropdown">
+              <li class="mdl-menu__item"><a class="android-link" href="http://terrabrasilis.info/policies/TERRABRASILIS">Políticas de uso</a></li>
+              <li class="mdl-menu__item"><a class="android-link" href="http://terrabrasilis.info/licenses/TERRABRASILIS">Licença</a></li>
+            </ul>            
+          </div>
+        </footer>
+      </div>
+    <script src="js/material.min.js"></script>
+  </body>
+</html>
